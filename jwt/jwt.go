@@ -32,7 +32,7 @@ func ParseTokenString(tokenstring string, claims jwt.Claims) (*jwt.Token, error)
 	//	return sillyhatSigningKey, nil
 	//})
 	token, err := jwt.ParseWithClaims(tokenstring, claims, func(token *jwt.Token) (interface{}, error) {
-		return []byte("sillyhatisacleverboy"), nil
+		return sillyhatSigningKey, nil
 	})
 	return token, err
 }
